@@ -56,7 +56,7 @@ public class ProtocolSupportSwordBlocking extends JavaPlugin implements Listener
 							if (wwo.getIndex() == 6) { // Index 6 = Shield
 								// Value 3 = Off Hand, Value 1 = Main Hand
 								// We are going to set it to 1 (main hand) if the value is 3 (off hand) so we can fake a sword blocking animation for older MC clients
-								if ((byte) wwo.getValue() == 3) {
+								if (wwo.getHandle() instanceof Byte && (byte) wwo.getValue() == 3) {
 									wwo.setValue((byte) 1);
 								}
 							}
